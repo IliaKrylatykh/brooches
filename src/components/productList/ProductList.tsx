@@ -3,12 +3,17 @@ import Product from '../product/Product';
 import { useProduct } from '../../hooks/getProduct';
 
 import './productList.scss'
+import {IProduct} from '../../models';
 
-const ProductList = () => {
-    const {products, addProduct} = useProduct();
+interface ProductProps {
+    onProductSelected: (product: IProduct) => void
+}
+
+const ProductList = ({onProductSelected}: ProductProps) => {
+    const {products} = useProduct();
     return (
         <div className='productList'>
-            {products.map(product => <Product product={product} key={product.id}/>)}
+            {products.map(product => <Product product={product} key={product.id} onProductSelected={onProductSelected}/>)}
         </div>
     );
 };
