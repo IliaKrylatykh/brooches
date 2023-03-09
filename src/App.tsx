@@ -1,14 +1,13 @@
 
 import './app.scss'
-import ProductList from './components/productList/ProductList';
-
+import ProductContainer from './components/productContainer/ProductContainer';
 
 function App() {
 
 
     return (
         <div className="App">
-            <ProductList/>
+            <ProductContainer/>
         </div>
     );
 }
